@@ -11,8 +11,8 @@ Disallow: /private
 Crawl-delay: 1
 
 # Sitemaps
-Sitemap: https://amrsolar.com/sitemap.xml
-Sitemap: https://amrsolar.com/sitemap-pages.xml
+Sitemap: https://www.amrsolarsolutions.com/sitemap.xml
+Sitemap: https://www.amrsolarsolutions.com/sitemap-pages.xml
 
 # Google-specific
 User-agent: Googlebot

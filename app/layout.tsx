@@ -12,14 +12,14 @@ export const metadata: Metadata = {
   title: "Best Solar Panel Installation & Government Subsidy in India | AMR Solar",
   description: "AMR Solar provides MNRE-approved rooftop solar systems with government subsidies up to ₹78,000. Save 90% on electricity bills. Free solar consultation & installation.",
   keywords: "solar panels, solar system installation, rooftop solar, government subsidy solar, renewable energy, solar panels for home, solar energy solutions, net metering, PM Surya Ghar Muft Bijli Yojana, solar panel price, best solar company, solar installation cost, hybrid solar system, solar water pump",
-  metadataBase: new URL("https://amrsolar.com"),
+  metadataBase: new URL("https://www.amrsolarsolutions.com"),
   alternates: {
-    canonical: "https://amrsolar.com",
+    canonical: "https://www.amrsolarsolutions.com",
   },
   openGraph: {
     title: "Best Solar Panel Installation with Government Subsidy | AMR Solar",
     description: "Install MNRE-approved solar systems and get up to ₹78,000 government subsidy. Save 90% on electricity bills. Free consultation today.",
-    url: "https://amrsolar.com",
+    url: "https://www.amrsolarsolutions.com",
     siteName: "AMR Solar",
     type: "website",
     images: [
@@ -54,11 +54,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   const schemaOrgData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://amrsolar.com",
+    "@id": "https://www.amrsolarsolutions.com",
     name: "AMR Solar",
     image: "https://www.AMRsolar.com/wp-content/uploads/2026/07/Residential-Solar-Systems.jpg",
     description: "MNRE-approved rooftop solar system installation with government subsidies up to ₹78,000",
-    url: "https://amrsolar.com",
+    url: "https://www.amrsolarsolutions.com",
     telephone: "+917995567711",
     priceRange: "₹",
     areaServed: "IN",
