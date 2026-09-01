@@ -56,7 +56,7 @@ export default function AMRSolarHome() {
       {/* Hero Section */}
       <section className="relative bg-slate-900 text-white overflow-hidden py-24 lg:py-32">
         <div className="absolute inset-0 z-0 opacity-40">
-          <img src="https://www.AMRsolar.com/wp-content/uploads/2026/07/Residential-Solar-Systems.jpg" alt="Solar Panels Rooftop" className="w-full h-full object-cover" />
+          <img src="https://www.AMRsolar.com/wp-content/uploads/2026/07/Residential-Solar-Systems.jpg" alt="Professional rooftop solar panel installation for residential solar energy systems" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-transparent"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -71,7 +71,7 @@ export default function AMRSolarHome() {
               <Sun className="w-4 h-4" /> Trusted MNRE-Approved Installer
             </motion.div>
             
-            {/* Custom Animated H1 with dropping 'P' */}
+            {/* Custom Animated H1 - Optimized for SEO Keywords */}
             <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
               <span className="whitespace-nowrap">
                 <motion.span
@@ -81,7 +81,7 @@ export default function AMRSolarHome() {
                   transition={{ duration: 1.5, delay: 0.1, type: "spring", bounce: 0.5 }}
                   className="inline-block"
                 >
-                  P
+                  Best
                 </motion.span>
                 <motion.span
                   initial={{ opacity: 0, x: -30, filter: "blur(10px)" }}
@@ -90,7 +90,7 @@ export default function AMRSolarHome() {
                   transition={{ duration: 1.2, delay: 0.3, type: "spring", bounce: 0.3 }}
                   className="inline-block"
                 >
-                  owering
+                  {" "}Rooftop Solar Panels
                 </motion.span>
               </span>{" "}
               <motion.span
@@ -100,7 +100,7 @@ export default function AMRSolarHome() {
                 transition={{ duration: 1.2, delay: 0.4, type: "spring", bounce: 0.3 }}
                 className="inline-block"
               >
-                a <span className="text-amber-400">Sustainable Future</span> with Solar Energy
+                & <span className="text-amber-400">Government Subsidy</span> Installation
               </motion.span>
             </h1>
             
@@ -111,7 +111,7 @@ export default function AMRSolarHome() {
               transition={{ duration: 1.2, delay: 0.5, type: "spring", bounce: 0.3 }} 
               className="text-lg text-slate-300 max-w-xl"
             >
-              Install MNRE-approved rooftop solar systems and unlock government subsidies up to <strong className="text-white">₹78,000</strong>. Save up to 90% on electricity bills.
+              Install MNRE-approved rooftop solar systems with government subsidies up to <strong className="text-white">₹78,000</strong> under PM Surya Ghar Muft Bijli Yojana. Reduce electricity bills by up to 90% with professional solar energy installation. Get free solar consultation today.
             </motion.p>
             
             <motion.div 
@@ -238,7 +238,7 @@ export default function AMRSolarHome() {
             className="relative"
           >
             <div className="absolute inset-0 bg-amber-500 rounded-3xl translate-x-4 translate-y-4 opacity-50"></div>
-            <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=800&q=80" alt="Solar Project Showcase" className="relative z-10 rounded-3xl w-full h-[500px] object-cover shadow-2xl" />
+            <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=800&q=80" alt="Solar rooftop installation project showcase with clean energy generation" className="relative z-10 rounded-3xl w-full h-[500px] object-cover shadow-2xl" />
           </motion.div>
         </div>
       </section>
