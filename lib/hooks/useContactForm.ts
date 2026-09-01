@@ -1,7 +1,10 @@
 import { useState } from 'react';
 
 interface ContactFormData {
-  name: string;
+  firstName: string;
+  lastName: string;
+  cityLocation: string;
+  type: string;
   email: string;
   phone: string;
   message: string;

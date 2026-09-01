@@ -4,7 +4,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    if (!body.name || !body.email || !body.phone || !body.message) {
+    if (!body.firstName || !body.lastName || !body.email || !body.phone || !body.message) {
       return Response.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -12,7 +12,10 @@ export async function POST(request: Request) {
     }
 
     await sendContactEmail({
-      name: body.name.trim(),
+      firstName: body.firstName.trim(),
+      lastName: body.lastName.trim(),
+      cityLocation: body.cityLocation?.trim() || '',
+      type: body.type?.trim() || 'Residential',
       email: body.email.trim(),
       phone: body.phone.trim(),
       message: body.message.trim(),

@@ -1,15 +1,33 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Sun, ShieldCheck, Wrench, FileText, MapPin, CheckCircle, 
   ChevronRight, ArrowRight, BatteryCharging, Droplets, Shield, 
   Quote, Plus, Minus, Send, Zap
 } from "lucide-react";
+import { useContactForm } from "@/lib/hooks/useContactForm";
 
 export default function AMRSolarHome() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
+  const [formData, setFormData] = useState({ 
+    firstName: '', 
+    lastName: '', 
+    cityLocation: '', 
+    type: 'Residential', 
+    email: '', 
+    phone: '', 
+    message: '' 
+  });
+  const { loading, success, error, submitForm, reset } = useContactForm();
+
+  useEffect(() => {
+    if (success) {
+      alert('Thank you! Your request has been submitted successfully.');
+      reset();
+    }
+  }, [success, reset]);
 
   const scrollToContact = (event?: React.MouseEvent<HTMLAnchorElement>) => {
     const target = document.getElementById("contact");
@@ -427,10 +445,91 @@ export default function AMRSolarHome() {
             className="bg-white text-slate-800 p-8 rounded-3xl shadow-2xl"
           >
             <h3 className="text-2xl font-black mb-6 text-slate-900">Get a Free Quote</h3>
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-              <input type="text" placeholder="Full Name" className="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl focus:outline-none focus:border-amber-500 transition-colors" />
-              <input type="tel" placeholder="Phone Number" className="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl focus:outline-none focus:border-amber-500 transition-colors" />
-              <button type="submit" className="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-4 rounded-xl shadow-lg transition-all">Submit Request</button>
+            <form onSubmit={async (e) => {
+              e.preventDefault();
+              await submitForm({
+                firstName: formData.firstName,
+                lastName: formData.lastName,
+                cityLocation: formData.cityLocation,
+                type: formData.type,
+                email: formData.email,
+                phone: formData.phone,
+                message: formData.message
+              });
+              if (!error) {
+                setFormData({ 
+                  firstName: '', 
+                  lastName: '', 
+                  cityLocation: '', 
+                  type: 'Residential', 
+                  email: '', 
+                  phone: '', 
+                  message: '' 
+                });
+              }
+            }} className="space-y-4">
+              <input 
+                type="text" 
+                placeholder="First Name" 
+                value={formData.firstName}
+                onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                className="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl focus:outline-none focus:border-amber-500 transition-colors" 
+              />
+              <input 
+                type="text" 
+                placeholder="Last Name" 
+                value={formData.lastName}
+                onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                className="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl focus:outline-none focus:border-amber-500 transition-colors" 
+              />
+              <input 
+                type="text" 
+                placeholder="City / Location" 
+                value={formData.cityLocation}
+                onChange={(e) => setFormData({ ...formData, cityLocation: e.target.value })}
+                className="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl focus:outline-none focus:border-amber-500 transition-colors" 
+              />
+              <select
+                value={formData.type}
+                onChange={(e) => setFormData({ ...formData, type: e.target.value })}
+                className="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl focus:outline-none focus:border-amber-500 transition-colors"
+              >
+                <option value="Residential">Residential</option>
+                <option value="Commercial">Commercial</option>
+                <option value="Industrial">Industrial</option>
+              </select>
+              <input 
+                type="email" 
+                placeholder="Email Address" 
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                className="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl focus:outline-none focus:border-amber-500 transition-colors" 
+              />
+              <input 
+                type="tel" 
+                placeholder="Phone Number" 
+                value={formData.phone}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/[^0-9]/g, '');
+                  setFormData({ ...formData, phone: value });
+                }}
+                className="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl focus:outline-none focus:border-amber-500 transition-colors" 
+              />
+              <textarea 
+                placeholder="Message" 
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                rows={4}
+                className="w-full bg-slate-50 border border-slate-200 px-4 py-4 rounded-xl focus:outline-none focus:border-amber-500 transition-colors resize-none"
+              />
+              <button 
+                type="submit" 
+                disabled={loading}
+                className="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-4 rounded-xl shadow-lg transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {loading ? 'Submitting...' : 'Submit Request'}
+              </button>
+              {error && <p className="text-red-500 text-sm">{error}</p>}
             </form>
           </motion.div>
         </div>
