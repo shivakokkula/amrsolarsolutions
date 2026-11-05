@@ -52,7 +52,7 @@ export default function TermsConditionsPage() {
         <div className="mt-10 bg-slate-900 text-white rounded-3xl p-8">
           <h3 className="text-2xl font-black">Governing Law</h3>
           <p className="mt-4 leading-relaxed text-slate-300">
-            These terms are governed by the laws of India, and any disputes arising from them shall be subject to the jurisdiction of courts in Telangana, India, unless otherwise required by applicable law.
+            These terms are governed by the laws of India, and any disputes arising from them shall be subject to the jurisdiction of competent courts in India, unless otherwise required by applicable law.
           </p>
         </div>
       </main>

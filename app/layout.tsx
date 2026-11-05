@@ -1,41 +1,46 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { MessageCircle } from "lucide-react";
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  title: "Best Solar Panel Installation & Government Subsidy in India | AMR Solar",
-  description: "AMR Solar provides MNRE-approved rooftop solar systems with government subsidies up to ₹78,000. Save 90% on electricity bills. Free solar consultation & installation.",
-  keywords: "solar panels, solar system installation, rooftop solar, government subsidy solar, renewable energy, solar panels for home, solar energy solutions, net metering, PM Surya Ghar Muft Bijli Yojana, solar panel price, best solar company, solar installation cost, hybrid solar system, solar water pump",
+  title: "AMR Solar Solutions | Rooftop, Commercial & Agricultural Solar in India",
+  description: "AMR Solar Solutions provides MNRE-approved residential rooftop solar systems with government subsidies up to ₹78,000, commercial solar plants, and agricultural solar pumps across India. Save 90% on electricity bills.",
+  keywords: "AMR Solar, solar panels India, rooftop solar Jagtial, solar installation Secunderabad, solar subsidy India, agricultural solar pumps, commercial solar panels, PM Surya Ghar Muft Bijli Yojana, net metering India",
   metadataBase: new URL("https://www.amrsolarsolutions.com"),
   alternates: {
     canonical: "https://www.amrsolarsolutions.com",
   },
   openGraph: {
-    title: "Best Solar Panel Installation with Government Subsidy | AMR Solar",
-    description: "Install MNRE-approved solar systems and get up to ₹78,000 government subsidy. Save 90% on electricity bills. Free consultation today.",
+    title: "AMR Solar Solutions | Best Solar Panel Installation with Government Subsidy",
+    description: "MNRE-approved solar systems. Up to ₹78,000 government subsidy. Save up to 90% on electricity bills with residential, commercial & agricultural solar.",
     url: "https://www.amrsolarsolutions.com",
-    siteName: "AMR Solar",
+    siteName: "AMR Solar Solutions",
     type: "website",
     images: [
       {
-        url: "https://www.AMRsolar.com/wp-content/uploads/2026/07/Residential-Solar-Systems.jpg",
+        url: "https://www.amrsolarsolutions.com/assets/amr_logo.jpeg",
         width: 1200,
         height: 630,
-        alt: "AMR Solar - Residential Solar Systems Installation"
+        alt: "AMR Solar Solutions - Clean Energy Installation"
       }
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Solar Panel Installation with Government Subsidy | AMR Solar",
+    title: "AMR Solar Solutions | Rooftop, Commercial & Agricultural Solar",
     description: "MNRE-approved solar systems. Up to ₹78,000 subsidy. Save 90% on electricity bills.",
-    images: ["https://www.AMRsolar.com/wp-content/uploads/2026/07/Residential-Solar-Systems.jpg"],
+    images: ["https://www.amrsolarsolutions.com/assets/amr_logo.jpeg"],
   },
   robots: {
     index: true,
@@ -44,10 +49,6 @@ export const metadata: Metadata = {
     "max-image-preview": "large",
     "max-video-preview": -1,
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
@@ -55,21 +56,43 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://www.amrsolarsolutions.com",
-    name: "AMR Solar",
-    image: "https://www.AMRsolar.com/wp-content/uploads/2026/07/Residential-Solar-Systems.jpg",
-    description: "MNRE-approved rooftop solar system installation with government subsidies up to ₹78,000",
+    name: "AMR Solar Solutions",
+    image: "https://www.amrsolarsolutions.com/assets/amr_logo.jpeg",
+    description: "MNRE-approved rooftop solar system installation with government subsidies up to ₹78,000, commercial solar solutions, and agricultural solar pumps.",
     url: "https://www.amrsolarsolutions.com",
-    telephone: "+917995567711",
+    telephone: ["+917569967711", "+919347857711"],
+    email: "info@amrsolarsolutions.com",
     priceRange: "₹",
-    areaServed: "IN",
-    serviceType: ["Residential Solar Installation", "Commercial Solar Systems", "Hybrid Solar Systems", "Solar Water Pumps", "Net Metering Assistance"],
-    sameAs: [
-      "https://wa.me/917995567711"
+    areaServed: ["India", "Jagtial", "Secunderabad", "Hyderabad", "Karimnagar", "Peddapalli", "Warangal"],
+    serviceType: [
+      "Residential Rooftop Solar Installation",
+      "Commercial Solar Power Plants",
+      "Agricultural Solar Pumps & Irrigation",
+      "Net Metering Assistance",
+      "Government Subsidy Guidance",
+      "Hybrid Solar Battery Systems"
     ],
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "IN"
-    }
+    sameAs: [
+      "https://wa.me/917569967711"
+    ],
+    address: [
+      {
+        "@type": "PostalAddress",
+        streetAddress: "1-2 Muthnoor, Velgatoor",
+        addressLocality: "Jagtial",
+        addressRegion: "India",
+        postalCode: "505526",
+        addressCountry: "IN"
+      },
+      {
+        "@type": "PostalAddress",
+        streetAddress: "Narapally",
+        addressLocality: "Secunderabad",
+        addressRegion: "India",
+        postalCode: "500088",
+        addressCountry: "IN"
+      }
+    ]
   };
 
   return (
@@ -94,32 +117,23 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
       </head>
       <body className={`${inter.className} bg-slate-50 selection:bg-amber-400 selection:text-slate-900 flex flex-col min-h-screen`}>
-        
         <Navbar />
 
         <main className="flex-grow overflow-x-hidden">
           {children}
         </main>
 
-        <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-sm mt-auto">
-          <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p>© 2026 AMR Solar Renewable Energy Solutions. All Rights Reserved.</p>
-            <div className="flex flex-wrap gap-6 justify-center">
-              <Link href="/privacy-policy" className="hover:text-amber-400 transition-colors">Privacy Policy</Link>
-              <Link href="/terms-conditions" className="hover:text-amber-400 transition-colors">Terms & Conditions</Link>
-              <Link href="/sitemap.xml" className="hover:text-amber-400 transition-colors">Sitemap</Link>
-            </div>
-          </div>
-        </footer>
+        <Footer />
 
+        {/* Floating WhatsApp Quick Action */}
         <a
-          href="https://wa.me/917995567711?text=Hello%20AMR%20Solar%2C%20I%20want%20a%20free%20quote."
+          href="https://wa.me/917569967711?text=Hello%20AMR%20Solar%2C%20I%20am%20interested%20in%20solar%20solutions."
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Chat on WhatsApp"
-          className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.45)] transition-all duration-300 hover:scale-110 hover:bg-[#1fb85d]"
+          aria-label="Chat on WhatsApp with AMR Solar"
+          className="fixed bottom-6 right-6 z-50 flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.45)] transition-all duration-300 hover:scale-110 hover:bg-[#1fb85d]"
         >
-          <MessageCircle className="h-8 w-8" strokeWidth={2.6} />
+          <MessageCircle className="h-7 w-7 sm:h-8 sm:w-8" strokeWidth={2.4} />
         </a>
       </body>
     </html>

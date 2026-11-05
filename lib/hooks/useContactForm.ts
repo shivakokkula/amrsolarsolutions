@@ -1,13 +1,19 @@
 import { useState } from 'react';
 
-interface ContactFormData {
+export interface DynamicContactFormData {
   firstName: string;
-  lastName: string;
+  lastName?: string;
   cityLocation: string;
   type: string;
-  email: string;
+  email?: string;
   phone: string;
-  message: string;
+  message?: string;
+  motorCapacity?: string;
+  installationRequirement?: string;
+  borewellDepth?: string;
+  solarCapacity?: string;
+  businessName?: string;
+  monthlyBill?: string;
 }
 
 export function useContactForm() {
@@ -15,7 +21,7 @@ export function useContactForm() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const submitForm = async (data: ContactFormData) => {
+  const submitForm = async (data: DynamicContactFormData) => {
     setLoading(true);
     setError(null);
     setSuccess(false);
@@ -34,9 +40,11 @@ export function useContactForm() {
       }
 
       setSuccess(true);
+      return true;
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'An error occurred';
       setError(errorMessage);
+      return false;
     } finally {
       setLoading(false);
     }

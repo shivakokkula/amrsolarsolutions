@@ -1,28 +1,34 @@
 import { Metadata } from "next";
 
-export const generatePageMetadata = (page: string, title: string, description: string, keywords: string[] = []): Metadata => {
-  const baseUrl = "https://amrsolar.com";
+export const generatePageMetadata = (
+  page: string, 
+  title: string, 
+  description: string, 
+  keywords: string[] = []
+): Metadata => {
+  const baseUrl = "https://www.amrsolarsolutions.com";
+  const path = page === "home" ? "" : page;
   
   return {
-    title: title,
+    title: `${title} | AMR Solar Solutions`,
     description: description,
     keywords: keywords.join(", "),
     metadataBase: new URL(baseUrl),
     alternates: {
-      canonical: `${baseUrl}/${page === "home" ? "" : page}`,
+      canonical: `${baseUrl}/${path}`,
     },
     openGraph: {
-      title: title,
+      title: `${title} | AMR Solar Solutions`,
       description: description,
-      url: `${baseUrl}/${page === "home" ? "" : page}`,
-      siteName: "AMR Solar",
+      url: `${baseUrl}/${path}`,
+      siteName: "AMR Solar Solutions",
       type: "website",
       images: [
         {
-          url: "https://www.AMRsolar.com/wp-content/uploads/2026/07/Residential-Solar-Systems.jpg",
+          url: "https://images.unsplash.com/photo-1509391366360-12009a30f785?w=1200&q=80",
           width: 1200,
           height: 630,
-          alt: "AMR Solar - Solar Solutions"
+          alt: "AMR Solar Solutions"
         }
       ],
     },
@@ -33,40 +39,68 @@ export const generatePageMetadata = (page: string, title: string, description: s
   };
 };
 
-// Keywords for SEO
 export const seoKeywords = {
   home: [
-    "solar panels", 
-    "solar system installation",
-    "rooftop solar",
+    "solar panels India", 
+    "rooftop solar Jagtial",
+    "solar installation Secunderabad",
     "government subsidy solar",
-    "renewable energy",
+    "renewable energy India",
     "solar panels for home",
     "solar energy solutions",
     "net metering",
     "PM Surya Ghar Muft Bijli Yojana",
-    "MNRE approved solar",
-    "best solar company",
-    "solar installation cost",
-    "save on electricity bills",
-    "hybrid solar system",
-    "solar water pump"
+    "MNRE approved solar installer",
+    "best solar company India",
+    "residential solar",
+    "commercial solar",
+    "agricultural solar pump"
+  ],
+  residential: [
+    "residential rooftop solar",
+    "home solar panel installation India",
+    "net metering India",
+    "PM Surya Ghar subsidy",
+    "rooftop solar systems Jagtial Secunderabad",
+    "hybrid solar battery for home",
+    "save electricity bill solar"
+  ],
+  commercial: [
+    "commercial solar installation",
+    "solar panels for shops and offices",
+    "industrial rooftop solar India",
+    "solar tax benefits accelerated depreciation",
+    "commercial net metering",
+    "factory solar panels Secunderabad Hyderabad"
+  ],
+  agricultural: [
+    "agricultural solar water pump",
+    "solar motor for irrigation India",
+    "PM KUSUM solar scheme",
+    "solar tubewell pump",
+    "agricultural solar power Velgatoor Jagtial",
+    "drip irrigation solar system"
   ],
   subsidy: [
     "PM Surya Ghar Muft Bijli Yojana",
-    "government solar subsidy",
-    "solar panel subsidy",
-    "₹78,000 subsidy",
-    "solar energy subsidy",
-    "residential solar subsidy",
-    "rooftop solar subsidy"
+    "₹78000 solar subsidy",
+    "government solar subsidy India",
+    "solar financing low interest bank loan",
+    "solar subsidy eligibility criteria",
+    "MNRE subsidy rooftop solar"
   ],
   projects: [
-    "solar project",
-    "solar installation projects",
-    "residential solar projects",
-    "solar case studies",
-    "solar ROI calculation",
-    "solar bill reduction"
+    "completed solar installations India",
+    "solar project gallery",
+    "residential solar projects Hyderabad",
+    "commercial solar installations Warangal Jagtial",
+    "agricultural pump installations"
+  ],
+  contact: [
+    "AMR Solar contact number",
+    "AMR Solar Jagtial address",
+    "AMR Solar Secunderabad office",
+    "solar quotation India",
+    "solar site visit India"
   ]
 };
