@@ -57,8 +57,10 @@ export default function ResidentialSolarPage() {
   const systems = [
     {
       title: "On-Grid Rooftop Solar",
-      badge: "Most Popular & Cost-Effective",
-      desc: "Connected directly to your state electricity grid (TSSPDCL/TSNPDCL). Exports surplus power generated during daytime and automatically offsets your night-time grid usage through net metering.",
+      badge: "Most Popular & ₹78K Subsidy",
+      kw: "1 kW – 10 kW On-Grid",
+      image: "/assets/images/residential/residential_2.jpeg",
+      desc: "Connected directly to your state electricity grid (DISCOM). Exports surplus power generated during daytime and automatically offsets your night-time grid usage through net metering.",
       features: [
         "Eligible for maximum government subsidy up to ₹78,000",
         "Lowest initial investment and fastest ROI payback (3-4 years)",
@@ -70,6 +72,8 @@ export default function ResidentialSolarPage() {
     {
       title: "Hybrid Solar Systems",
       badge: "Solar + Battery Backup",
+      kw: "3 kW – 15 kW Hybrid",
+      image: "/assets/images/residential/residential_4.jpeg",
       desc: "The ultimate combination of grid-tied savings and battery energy storage. Keeps your home powered continuously even during grid power outages and night peak hours.",
       features: [
         "Uninterrupted power during power cuts & blackouts",
@@ -82,6 +86,8 @@ export default function ResidentialSolarPage() {
     {
       title: "Off-Grid Solar Solutions",
       badge: "100% Grid Independent",
+      kw: "3 kW – 20 kW Standalone",
+      image: "/assets/images/residential/residential_3.jpeg",
       desc: "Standalone solar power plant engineered for remote farmhouses, independent villas, or locations where grid connectivity is unstable or unavailable.",
       features: [
         "Complete freedom from grid electricity bills",
@@ -90,6 +96,41 @@ export default function ResidentialSolarPage() {
         "Built-in surge and lightning protection"
       ],
       icon: Zap,
+    }
+  ];
+
+  const residentialGallery = [
+    {
+      title: "5 kW On-Grid Rooftop Solar",
+      location: "Velgatoor, Jagtial",
+      subsidy: "₹78,000 Subsidy Received",
+      savings: "85% Bill Reduction",
+      image: "/assets/images/residential/residential_2.jpeg",
+      desc: "High-efficiency Mono PERC modules with bi-directional net meter installed under PM Surya Ghar Muft Bijli Yojana."
+    },
+    {
+      title: "10 kW Luxury Home Hybrid Solar",
+      location: "Narapally, Secunderabad",
+      subsidy: "Net Metered + Battery",
+      savings: "90% Bill Reduction",
+      image: "/assets/images/residential/residential_4.jpeg",
+      desc: "Turnkey rooftop installation with Lithium-ion battery backup, powering heavy AC loads and home appliances 24x7."
+    },
+    {
+      title: "3 kW Domestic Rooftop Solar",
+      location: "Hyderabad, India",
+      subsidy: "₹78,000 Direct DBT Subsidy",
+      savings: "Zero Electric Bill",
+      image: "/assets/images/residential/residential_3.jpeg",
+      desc: "Turnkey residential rooftop plant producing 360+ units monthly with elevated galvanised iron structure."
+    },
+    {
+      title: "6 kW Rooftop Solar Canopy & Shade Pergola",
+      location: "Secunderabad / Hyderabad",
+      subsidy: "₹78,000 Subsidy Approved",
+      savings: "88% Bill Reduction",
+      image: "/assets/images/residential/residential_5.jpeg",
+      desc: "Elevated high-clearance solar canopy structure creating a functional shade roof over the terrace for family outdoor living."
     }
   ];
 
@@ -150,7 +191,7 @@ export default function ResidentialSolarPage() {
       <section className="relative bg-slate-900 text-white py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-35">
           <img 
-            src="/assets/images/commercial/commercial_1.jpeg" 
+            src="/assets/images/residential/residential_2.jpeg" 
             alt="Residential rooftop solar installation" 
             className="w-full h-full object-cover"
           />
@@ -199,7 +240,7 @@ export default function ResidentialSolarPage() {
               </a>
 
               <a 
-                href="https://wa.me/917569967711?text=Hello%20AMR%20Solar%2C%20I%20am%20interested%20in%20Residential%20Rooftop%20Solar." 
+                href="https://wa.me/919347857711?text=Hello%20AMR%20Solar%2C%20I%20am%20interested%20in%20Residential%20Rooftop%20Solar." 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-3.5 rounded-full transition-all flex items-center gap-2 text-sm sm:text-base"
@@ -225,12 +266,17 @@ export default function ResidentialSolarPage() {
           </div>
 
           {/* Quick Consultation Card & Image */}
-          <div className="lg:col-span-5 space-y-4">
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.7 }}
+            className="lg:col-span-5 space-y-4"
+          >
             <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl group">
               <img 
-                src="/assets/images/residential/residential_1.jpeg" 
+                src="/assets/images/residential/residential_2.jpeg" 
                 alt="Residential Rooftop Solar Installation by AMR" 
-                className="w-full h-36 sm:h-44 object-cover group-hover:scale-105 transition-transform duration-700" 
+                className="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-700" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
               <div className="absolute bottom-3 left-4 right-4 flex justify-between items-center text-xs">
@@ -276,19 +322,25 @@ export default function ResidentialSolarPage() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Rooftop Systems Types */}
       <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-3"
+        >
           <span className="text-amber-600 font-bold uppercase tracking-widest text-xs">Tailored For Every Home</span>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900">Choose Your Residential Solar Architecture</h2>
           <p className="text-slate-600 text-sm sm:text-base">
             Whether you want maximum grid savings, battery backup for outages, or 100% independence, we build the right system for your roof.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {systems.map((item, idx) => {
@@ -299,51 +351,137 @@ export default function ResidentialSolarPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.15 }}
-                className="bg-white rounded-3xl p-8 shadow-xl shadow-slate-100 border border-slate-100 flex flex-col justify-between hover:-translate-y-1.5 transition-all"
+                transition={{ delay: idx * 0.15, duration: 0.6 }}
+                whileHover={{ y: -6 }}
+                className="bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-100 border border-slate-100 flex flex-col justify-between transition-all group"
               >
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6">
-                    <Icon className="w-7 h-7" />
+                  <div className="relative h-48 sm:h-56 overflow-hidden bg-slate-900">
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-amber-400">
+                      {item.badge}
+                    </div>
+                    <div className="absolute bottom-4 right-4 bg-amber-500/90 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-black text-slate-950">
+                      {item.kw}
+                    </div>
                   </div>
-                  <span className="inline-block bg-slate-100 text-slate-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
-                    {item.badge}
-                  </span>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">{item.desc}</p>
-                  
-                  <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-8 border-t border-slate-100 pt-6">
-                    {item.features.map((feat, fidx) => (
-                      <li key={fidx} className="flex items-start gap-2.5">
-                        <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
+
+                  <div className="p-8">
+                    <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6">{item.desc}</p>
+                    
+                    <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-8 border-t border-slate-100 pt-6">
+                      {item.features.map((feat, fidx) => (
+                        <li key={fidx} className="flex items-start gap-2.5">
+                          <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
-                <a 
-                  href="#enquiry-form"
-                  className="w-full text-center py-3 px-4 rounded-xl font-bold text-sm bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white transition-colors"
-                >
-                  Enquire for {item.title}
-                </a>
+                <div className="px-8 pb-8">
+                  <a 
+                    href="#enquiry-form"
+                    className="w-full block text-center py-3.5 px-4 rounded-xl font-bold text-sm bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white transition-colors"
+                  >
+                    Enquire for {item.title}
+                  </a>
+                </div>
               </motion.div>
             );
           })}
         </div>
       </section>
 
+      {/* Completed Residential Installations Showcase Gallery */}
+      <section className="py-20 bg-slate-100/70 border-y border-slate-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.6 }} 
+            className="text-center max-w-3xl mx-auto mb-16 space-y-3"
+          >
+            <span className="text-amber-600 font-bold uppercase tracking-widest text-xs">Real Rooftop Portfolio</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900">Featured Residential Rooftop Installations</h2>
+            <p className="text-slate-600 text-sm sm:text-base">
+              Real rooftop solar projects installed by AMR Solar with ₹78,000 DBT subsidy credit and bi-directional net metering.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {residentialGallery.map((p, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -6 }}
+                className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-xl shadow-slate-100 flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="relative h-52 overflow-hidden bg-slate-900">
+                    <img 
+                      src={p.image} 
+                      alt={p.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-amber-400">
+                      {p.subsidy}
+                    </div>
+                  </div>
+                  <div className="p-6 space-y-3">
+                    <h4 className="font-bold text-slate-900 text-lg leading-snug">{p.title}</h4>
+                    <div className="text-xs text-amber-600 font-bold">
+                      {p.location}
+                    </div>
+                    <div className="p-2.5 bg-emerald-50 rounded-xl border border-emerald-100 text-xs font-black text-emerald-700">
+                      {p.savings}
+                    </div>
+                    <p className="text-slate-600 text-xs leading-relaxed">{p.desc}</p>
+                  </div>
+                </div>
+                <div className="p-6 pt-0">
+                  <a 
+                    href="#enquiry-form"
+                    className="block text-center py-3 rounded-xl bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white font-bold text-xs transition-colors"
+                  >
+                    Check Subsidy for My Roof
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Net Metering Process Section */}
       <section id="net-metering" className="bg-slate-900 text-white py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto text-center space-y-4 mb-16"
+          >
             <span className="text-amber-400 font-bold uppercase tracking-widest text-xs">Bi-Directional Energy Flow</span>
             <h2 className="text-3xl sm:text-4xl font-black">How Net Metering Works with AMR Solar</h2>
             <p className="text-slate-400 text-sm sm:text-base">
               Turn your rooftop into a mini power station that banks units in the grid and generates electricity credits.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {netMeteringSteps.map((step, idx) => (
@@ -352,7 +490,8 @@ export default function ResidentialSolarPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
+                whileHover={{ y: -6 }}
                 className="bg-slate-800/80 border border-slate-700 p-6 rounded-3xl relative flex flex-col justify-between"
               >
                 <div>
@@ -367,7 +506,13 @@ export default function ResidentialSolarPage() {
             ))}
           </div>
 
-          <div className="mt-12 bg-slate-800 rounded-3xl p-6 sm:p-8 border border-slate-700 flex flex-col md:flex-row items-center justify-between gap-6">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mt-12 bg-slate-800 rounded-3xl p-6 sm:p-8 border border-slate-700 flex flex-col md:flex-row items-center justify-between gap-6"
+          >
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold flex-shrink-0">
                 <FileCheck className="w-6 h-6" />
@@ -383,21 +528,33 @@ export default function ResidentialSolarPage() {
             >
               Call +91 7569967711
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* System Sizing & Savings Matrix */}
       <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-12 space-y-3"
+        >
           <span className="text-amber-600 font-bold uppercase tracking-widest text-xs">System Sizing Guide</span>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900">Rooftop Capacities, Generation & Subsidies</h2>
           <p className="text-slate-600 text-sm sm:text-base">
             Select the system that best matches your monthly power usage and available rooftop shadow-free area.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="overflow-x-auto bg-white rounded-3xl shadow-xl shadow-slate-100 border border-slate-200">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="overflow-x-auto bg-white rounded-3xl shadow-xl shadow-slate-100 border border-slate-200"
+        >
           <table className="w-full text-left border-collapse text-xs sm:text-sm">
             <thead>
               <tr className="bg-slate-900 text-white uppercase text-[11px] tracking-wider">
@@ -424,13 +581,19 @@ export default function ResidentialSolarPage() {
               ))}
             </tbody>
           </table>
-        </div>
+        </motion.div>
       </section>
 
       {/* Interactive Bill Calculator */}
       <section className="bg-amber-500 py-16 text-slate-950">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-amber-300/40">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-amber-300/40"
+          >
             <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
               <span className="text-amber-600 font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-1.5">
                 <Calculator className="w-4 h-4" /> Quick ROI Estimator
@@ -492,7 +655,7 @@ export default function ResidentialSolarPage() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -500,7 +663,13 @@ export default function ResidentialSolarPage() {
       <section id="enquiry-form" className="py-20 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <div className="lg:col-span-6 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-6 space-y-6"
+          >
             <span className="text-amber-400 font-bold uppercase tracking-widest text-xs">Start Your Solar Journey</span>
             <h2 className="text-3xl sm:text-4xl font-black leading-tight">
               Request Your Free Residential Rooftop Consultation
@@ -540,10 +709,16 @@ export default function ResidentialSolarPage() {
               <strong className="text-white block font-semibold text-sm">Service Coverage:</strong>
               <p>Jagtial, Secunderabad, Hyderabad, Karimnagar, Peddapalli, Warangal, and all regions across India.</p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Form */}
-          <div className="lg:col-span-6 bg-white text-slate-900 rounded-3xl p-8 shadow-2xl">
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-6 bg-white text-slate-900 rounded-3xl p-8 shadow-2xl"
+          >
             <h3 className="text-2xl font-black mb-2 text-slate-900">Residential Solar Enquiry</h3>
             <p className="text-xs text-slate-500 mb-6">Fill in your details for a customized rooftop proposal.</p>
 
@@ -625,21 +800,34 @@ export default function ResidentialSolarPage() {
               {error && <p className="text-red-500 text-xs text-center">{error}</p>}
               {success && <p className="text-emerald-600 text-xs text-center font-bold">Request received! We will call you shortly.</p>}
             </form>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12 space-y-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12 space-y-3"
+          >
             <span className="text-amber-600 font-bold uppercase tracking-widest text-xs">Got Questions?</span>
             <h2 className="text-3xl font-black text-slate-900">Residential Solar Frequently Asked Questions</h2>
-          </div>
+          </motion.div>
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="border border-slate-200 rounded-2xl overflow-hidden">
+              <motion.div 
+                key={idx} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                className="border border-slate-200 rounded-2xl overflow-hidden"
+              >
                 <button 
                   onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
                   className="w-full flex items-center justify-between p-5 bg-slate-50 hover:bg-slate-100 transition-colors text-left"
@@ -652,7 +840,7 @@ export default function ResidentialSolarPage() {
                     {faq.a}
                   </div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

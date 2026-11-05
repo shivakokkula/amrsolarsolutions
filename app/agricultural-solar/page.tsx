@@ -153,7 +153,7 @@ export default function AgriculturalSolarPage() {
               </a>
 
               <a 
-                href="https://wa.me/917569967711?text=Hello%20AMR%20Solar%2C%20I%20am%20interested%20in%20Agricultural%20Solar%20Pumps." 
+                href="https://wa.me/919347857711?text=Hello%20AMR%20Solar%2C%20I%20am%20interested%20in%20Agricultural%20Solar%20Pumps." 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-3.5 rounded-full transition-all flex items-center gap-2 text-sm sm:text-base"
@@ -251,20 +251,31 @@ export default function AgriculturalSolarPage() {
 
       {/* Agricultural Solutions We Deliver */}
       <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.6 }} 
+          className="text-center max-w-3xl mx-auto mb-16 space-y-3"
+        >
           <span className="text-emerald-600 font-bold uppercase tracking-widest text-xs">Comprehensive Irrigation Solutions</span>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900">Modern Solar Pumping for Farms Across India</h2>
           <p className="text-slate-600 text-sm sm:text-base">
             From deep borewells to open wells and canals, AMR Solar delivers robust, high-efficiency solar pumping setups tailored to your water source and crop needs.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {solutions.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <div 
+              <motion.div 
                 key={item.title}
+                initial={{ opacity: 0, y: 30 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }} 
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                whileHover={{ y: -6 }}
                 className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-xl shadow-slate-100 flex flex-col justify-between hover:border-emerald-500 transition-all group"
               >
                 <div>
@@ -306,7 +317,7 @@ export default function AgriculturalSolarPage() {
                     Enquire for {item.title}
                   </a>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -315,15 +326,27 @@ export default function AgriculturalSolarPage() {
       {/* Solar Pump Sizing Table */}
       <section className="bg-white border-y border-slate-200 py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.6 }} 
+            className="text-center max-w-3xl mx-auto mb-12 space-y-3"
+          >
             <span className="text-emerald-600 font-bold uppercase tracking-widest text-xs">Pumping Capacities</span>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900">Recommended Solar Pump Sizing Chart</h2>
             <p className="text-slate-600 text-sm sm:text-base">
               Choose the right horsepower capacity based on your borewell depth and total cultivated acreage.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="overflow-x-auto rounded-3xl shadow-xl shadow-slate-100 border border-slate-200">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.8 }} 
+            className="overflow-x-auto rounded-3xl shadow-xl shadow-slate-100 border border-slate-200"
+          >
             <table className="w-full text-left border-collapse text-xs sm:text-sm">
               <thead>
                 <tr className="bg-slate-900 text-white uppercase text-[11px] tracking-wider">
@@ -350,15 +373,21 @@ export default function AgriculturalSolarPage() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Enquiry Form Section with Dynamic Form (Matches exact user screenshot) */}
+      {/* Enquiry Form Section with Dynamic Form */}
       <section id="agri-enquiry" className="py-20 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          <div className="lg:col-span-5 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -40 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.8 }} 
+            className="lg:col-span-5 space-y-6"
+          >
             <span className="text-emerald-400 font-bold uppercase tracking-widest text-xs">Farmer Assistance Desk</span>
             <h2 className="text-3xl sm:text-4xl font-black leading-tight">
               Get an Estimate for Your Farm or Borewell
@@ -399,16 +428,22 @@ export default function AgriculturalSolarPage() {
               <p>H.No. 1-2 Muthnoor, Velgatoor, Jagtial District, India - 505526</p>
               <p className="text-slate-400 text-[11px]">Serving Jagtial, Karimnagar, Peddapalli, Mancherial, Nizamabad, and across India.</p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Form component matching user's exact uploaded UI */}
-          <div className="lg:col-span-7">
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.8 }} 
+            className="lg:col-span-7"
+          >
             <DynamicQuoteForm 
               defaultCategory="Agricultural Solar"
               title="Agricultural Solar Installation Enquiry"
               subtitle="Example of the form your developer can add to AMR Solar Solutions."
             />
-          </div>
+          </motion.div>
 
         </div>
       </section>
@@ -416,14 +451,27 @@ export default function AgriculturalSolarPage() {
       {/* FAQ */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12 space-y-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12 space-y-3"
+          >
             <span className="text-emerald-600 font-bold uppercase tracking-widest text-xs">Farmer FAQs</span>
             <h2 className="text-3xl font-black text-slate-900">Frequently Asked Questions on Solar Pumps</h2>
-          </div>
+          </motion.div>
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="border border-slate-200 rounded-2xl overflow-hidden">
+              <motion.div 
+                key={idx} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                className="border border-slate-200 rounded-2xl overflow-hidden"
+              >
                 <button 
                   onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
                   className="w-full flex items-center justify-between p-5 bg-slate-50 hover:bg-slate-100 transition-colors text-left"
@@ -436,7 +484,7 @@ export default function AgriculturalSolarPage() {
                     {faq.a}
                   </div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

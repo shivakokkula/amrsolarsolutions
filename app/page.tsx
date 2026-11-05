@@ -215,38 +215,50 @@ export default function AMRSolarHome() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             { 
-              icon: <Sun className="w-8 h-8 text-amber-500" />, 
+              icon: <Sun className="w-6 h-6 text-amber-500" />, 
               title: "Residential Solar", 
+              badge: "₹78,000 Subsidy",
+              image: "/assets/images/residential/residential_2.jpeg",
               desc: "On-grid rooftop systems with bi-directional net metering and up to ₹78,000 direct DBT subsidy under PM Surya Ghar Muft Bijli Yojana.",
               link: "/residential-solar" 
             },
             { 
-              icon: <Building2 className="w-8 h-8 text-blue-500" />, 
+              icon: <Building2 className="w-6 h-6 text-blue-500" />, 
               title: "Commercial Solar", 
+              badge: "40% Tax Depreciation",
+              image: "/assets/images/commercial/commercial_1.jpeg",
               desc: "Engineered for shops, commercial complexes, offices, and industrial plants (5 kW to 1 MW+). Benefit from 40% Accelerated Depreciation tax write-offs.",
               link: "/commercial-solar" 
             },
             { 
-              icon: <Tractor className="w-8 h-8 text-emerald-500" />, 
+              icon: <Tractor className="w-6 h-6 text-emerald-500" />, 
               title: "Agricultural Solar", 
+              badge: "Zero Diesel Bills",
+              image: "/assets/images/agricultural/agricultural_1.jpeg",
               desc: "Solar water pumps (3HP to 10HP) and solar VFD motor controllers for tubewells and micro-irrigation, freeing farmers from diesel costs.",
               link: "/agricultural-solar" 
             },
             { 
-              icon: <BatteryCharging className="w-8 h-8 text-indigo-500" />, 
+              icon: <BatteryCharging className="w-6 h-6 text-indigo-500" />, 
               title: "Hybrid Solar Systems", 
+              badge: "24/7 Power Backup",
+              image: "/assets/images/residential/residential_4.jpeg",
               desc: "Combine solar energy with intelligent Lithium battery storage for 24/7 power backup during grid power cuts.",
               link: "/residential-solar" 
             },
             { 
-              icon: <FileText className="w-8 h-8 text-rose-500" />, 
+              icon: <FileText className="w-6 h-6 text-rose-500" />, 
               title: "Subsidies & Finance", 
+              badge: "~7% Low EMI Loans",
+              image: "/assets/images/residential/residential_3.jpeg",
               desc: "Complete documentation, portal clearance, and collateral-free bank loans starting from ~7% interest rates.",
               link: "/subsidy" 
             },
             { 
-              icon: <Wrench className="w-8 h-8 text-cyan-500" />, 
+              icon: <Wrench className="w-6 h-6 text-cyan-500" />, 
               title: "Solar Maintenance & AMC", 
+              badge: "25-Yr Performance",
+              image: "/assets/images/commercial/commercial_3.jpeg",
               desc: "Keep your solar plant operating at peak efficiency with professional module cleaning, inverter health checks, and preventive care.",
               link: "/contact" 
             }
@@ -257,21 +269,36 @@ export default function AMRSolarHome() {
               whileInView={{ opacity: 1, y: 0 }} 
               viewport={{ once: true }} 
               transition={{ duration: 0.6, delay: 0.1 + (idx * 0.1) }} 
-              className="bg-white p-8 rounded-3xl shadow-xl shadow-slate-100 border border-slate-100 hover:-translate-y-2 transition-all flex flex-col justify-between group"
+              className="bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-100 border border-slate-100 hover:-translate-y-2 transition-all flex flex-col justify-between group"
             >
               <div>
-                <div className="bg-slate-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-slate-100 transition-colors">
-                  {service.icon}
+                <div className="relative h-48 overflow-hidden bg-slate-900">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-amber-400">
+                    {service.badge}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6">{service.desc}</p>
+
+                <div className="p-6 sm:p-8">
+                  <div className="bg-slate-50 w-12 h-12 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-amber-50 group-hover:text-amber-600 transition-colors">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{service.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">{service.desc}</p>
+                </div>
               </div>
-              <Link 
-                href={service.link} 
-                className="inline-flex items-center gap-2 text-amber-600 font-bold text-xs uppercase tracking-wider hover:text-amber-500"
-              >
-                Learn More <ChevronRight className="w-4 h-4" />
-              </Link>
+              <div className="px-6 sm:px-8 pb-6 sm:pb-8">
+                <Link 
+                  href={service.link} 
+                  className="inline-flex items-center gap-2 text-amber-600 font-bold text-xs uppercase tracking-wider hover:text-amber-500"
+                >
+                  Explore Solution <ChevronRight className="w-4 h-4" />
+                </Link>
+              </div>
             </motion.div>
           ))}
         </div>

@@ -165,7 +165,13 @@ export default function AboutPage() {
       <section className="py-20 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <div className="lg:col-span-6 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -40 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.8 }} 
+            className="lg:col-span-6 space-y-6"
+          >
             <span className="text-amber-600 font-bold uppercase tracking-widest text-xs">Who We Are</span>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 leading-tight">
               Leading the Transition to Clean & Sustainable Solar Energy
@@ -204,10 +210,16 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="bg-white p-8 rounded-3xl shadow-xl shadow-slate-100 border border-slate-200 space-y-4">
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.8 }} 
+            className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6"
+          >
+            <div className="bg-white p-8 rounded-3xl shadow-xl shadow-slate-100 border border-slate-200 space-y-4 hover:-translate-y-1 transition-transform">
               <div className="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center">
                 <Target className="w-7 h-7" />
               </div>
@@ -217,7 +229,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-slate-900 p-8 rounded-3xl shadow-xl space-y-4 text-white sm:translate-y-6">
+            <div className="bg-slate-900 p-8 rounded-3xl shadow-xl space-y-4 text-white sm:translate-y-6 hover:-translate-y-1 transition-transform">
               <div className="w-14 h-14 bg-slate-800 text-amber-400 rounded-2xl flex items-center justify-center border border-slate-700">
                 <Lightbulb className="w-7 h-7" />
               </div>
@@ -226,7 +238,7 @@ export default function AboutPage() {
                 To be India's most trusted solar energy partner, recognized for uncompromising installation quality, seamless customer care, and leadership in renewable adoption.
               </p>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </section>
@@ -234,20 +246,31 @@ export default function AboutPage() {
       {/* Service Areas Section (User requested: service areas) */}
       <section className="bg-slate-900 text-white py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.8 }} 
+            className="text-center max-w-3xl mx-auto mb-16 space-y-3"
+          >
             <span className="text-amber-400 font-bold uppercase tracking-widest text-xs">Where We Operate</span>
             <h2 className="text-3xl sm:text-4xl font-black">Our Service Areas Across India</h2>
             <p className="text-slate-300 text-sm sm:text-base">
               With offices in Jagtial and Secunderabad, our field teams deliver quick on-site surveys, installations, and maintenance services across all regions.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {serviceAreas.map((area, idx) => {
               const Icon = area.icon;
               return (
-                <div 
+                <motion.div 
                   key={idx}
+                  initial={{ opacity: 0, y: 30 }} 
+                  whileInView={{ opacity: 1, y: 0 }} 
+                  viewport={{ once: true }} 
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  whileHover={{ y: -6 }}
                   className="bg-slate-800/80 border border-slate-700 p-6 rounded-3xl flex flex-col justify-between hover:border-amber-400 transition-colors"
                 >
                   <div className="space-y-3">
@@ -267,13 +290,19 @@ export default function AboutPage() {
                       Request Survey <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
 
           {/* Both Office Locations Highlight */}
-          <div className="mt-12 bg-slate-800 border border-slate-700 p-8 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.8 }} 
+            className="mt-12 bg-slate-800 border border-slate-700 p-8 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-amber-400 font-bold text-sm">
                 <MapPin className="w-4 h-4" /> Head Office:
@@ -291,13 +320,19 @@ export default function AboutPage() {
               <p className="text-slate-300 text-xs">Secunderabad, India - 500088</p>
               <p className="text-amber-400 text-xs font-semibold pt-1">Direct Call: +91 9347857711</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Quality Assurance Banner */}
       <section className="py-16 max-w-7xl mx-auto px-6">
-        <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }} 
+          whileInView={{ opacity: 1, scale: 1 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.6 }} 
+          className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8"
+        >
           <div className="flex items-center gap-6">
             <div className="w-16 h-16 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center flex-shrink-0 font-bold">
               <ShieldCheck className="w-9 h-9" />
@@ -311,11 +346,11 @@ export default function AboutPage() {
           </div>
           <Link 
             href="/contact" 
-            className="whitespace-nowrap bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white font-bold px-8 py-4 rounded-full text-sm transition-all"
+            className="whitespace-nowrap bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white font-bold px-8 py-4 rounded-full text-sm transition-all shadow-lg hover:shadow-amber-500/20"
           >
             Get quote Today
           </Link>
-        </div>
+        </motion.div>
       </section>
 
     </div>

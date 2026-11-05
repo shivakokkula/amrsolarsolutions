@@ -73,6 +73,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       "Hybrid Solar Battery Systems"
     ],
     sameAs: [
+      "https://wa.me/919347857711",
       "https://wa.me/917569967711"
     ],
     address: [
@@ -127,7 +128,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
         {/* Floating WhatsApp Quick Action */}
         <a
-          href="https://wa.me/917569967711?text=Hello%20AMR%20Solar%2C%20I%20am%20interested%20in%20solar%20solutions."
+          href="https://wa.me/919347857711?text=Hello%20AMR%20Solar%2C%20I%20am%20interested%20in%20solar%20solutions."
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp with AMR Solar"

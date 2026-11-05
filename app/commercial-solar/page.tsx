@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { 
   Building2, Factory, Store, Briefcase, Zap, TrendingUp, 
   ShieldCheck, ArrowRight, CheckCircle, Calculator, Phone, 
-  Mail, Award, DollarSign, BarChart3, HelpCircle
+  Mail, Award, DollarSign, BarChart3, HelpCircle, MessageSquare
 } from "lucide-react";
 import DynamicQuoteForm from "@/components/DynamicQuoteForm";
 
@@ -14,26 +14,73 @@ export default function CommercialSolarPage() {
     {
       title: "Retail Shops & Commercial Complexes",
       icon: Store,
+      image: "/assets/images/commercial/commercial_1.jpeg",
+      badge: "Retail & Complexes",
+      capacity: "10 kW – 100 kW+",
       desc: "Ideal for retail stores, supermarkets, malls, and showrooms with high daytime air conditioning and lighting loads. Solar directly offsets peak commercial tariff rates.",
       benefits: ["Offsets peak daytime electricity tariffs", "Rapid 3-year capital payback", "Custom aesthetic rooftop mounting"]
     },
     {
       title: "Corporate Offices & IT Parks",
       icon: Briefcase,
+      image: "/assets/images/commercial/commercial_2.jpeg",
+      badge: "Offices & IT Parks",
+      capacity: "15 kW – 150 kW+",
       desc: "High-density office environments benefit from consistent daytime solar generation matching HVAC and computer server power requirements.",
       benefits: ["Substantial operational OPEX reduction", "Achieve green building ESG certifications", "Real-time generation dashboard"]
     },
     {
       title: "Manufacturing & Industrial Units",
       icon: Factory,
+      image: "/assets/images/commercial/commercial_3.jpeg",
+      badge: "Industrial Facilities",
+      capacity: "50 kW – 500 kW+",
       desc: "High-capacity rooftop or ground-mount systems (50 kW to 500+ kW) for textile mills, packaging, food processing, cold storage, and heavy fabrication plants.",
       benefits: ["Displaces expensive diesel generator fuel", "Handles inductive loads & motor start-ups", "Seamless HT/LT net metering integration"]
     },
     {
-      title: "Hospitals & Educational Institutions",
+      title: "Warehouses & Logistics Hubs",
       icon: Building2,
-      desc: "Schools, colleges, universities, and healthcare facilities with extensive roof areas can achieve sustainable, budget-predictable clean energy.",
+      image: "/assets/images/commercial/commercial_4.jpeg",
+      badge: "Warehouses & Logistics",
+      capacity: "100 kW – 1 MW+",
+      desc: "Schools, colleges, warehouses, and logistics hubs with extensive roof areas can achieve sustainable, budget-predictable clean energy.",
       benefits: ["Predictable electricity costs for decades", "Uninterrupted clean power", "Promotes sustainability to community"]
+    }
+  ];
+
+  const commercialProjects = [
+    {
+      title: "25 kW Commercial Complex Installation",
+      location: "Hyderabad, India",
+      capacity: "25 kW On-Grid",
+      savings: "₹32,000 / Month Saved",
+      image: "/assets/images/commercial/commercial_1.jpeg",
+      desc: "Multi-floor shopping complex rooftop array providing complete power offset for daylight retail lighting and air conditioning."
+    },
+    {
+      title: "100 kW Commercial Warehouse Solar Setup",
+      location: "Secunderabad, India",
+      capacity: "100 kW Rooftop Shed",
+      savings: "₹1,20,000 / Month Saved",
+      image: "/assets/images/commercial/commercial_2.jpeg",
+      desc: "Large logistics warehouse shed installation with custom clamp mounts, eliminating daytime grid dependency."
+    },
+    {
+      title: "50 kW Industrial Factory Solar Plant",
+      location: "Industrial Corridor, India",
+      capacity: "50 kW HT Synchronized",
+      savings: "₹65,000 / Month Saved",
+      image: "/assets/images/commercial/commercial_3.jpeg",
+      desc: "Heavy industrial facility plant reducing diesel generator run hours and cutting HT peak demand surcharges."
+    },
+    {
+      title: "40 kW Corporate Office & Showroom Solar",
+      location: "Karimnagar / Jagtial, India",
+      capacity: "40 kW Commercial Rooftop",
+      savings: "₹50,000 / Month Saved",
+      image: "/assets/images/commercial/commercial_4.jpeg",
+      desc: "Integrated rooftop solar powering centralized HVAC, computers, and retail showroom displays with 40% tax depreciation."
     }
   ];
 
@@ -144,10 +191,19 @@ export default function CommercialSolarPage() {
               </a>
 
               <a 
+                href="https://wa.me/919347857711?text=Hello%20AMR%20Solar%2C%20I%20am%20interested%20in%20Commercial%20Solar." 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-3.5 rounded-full transition-all flex items-center gap-2 text-sm sm:text-base"
+              >
+                <MessageSquare className="w-4 h-4" /> WhatsApp Us
+              </a>
+
+              <a 
                 href="tel:+917569967711" 
                 className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-full border border-white/20 transition-all flex items-center gap-2 text-sm sm:text-base"
               >
-                <Phone className="w-4 h-4 text-amber-400" /> Talk to Specialist: +91 7569967711
+                <Phone className="w-4 h-4 text-amber-400" /> +91 7569967711
               </a>
             </motion.div>
           </div>
@@ -209,15 +265,27 @@ export default function CommercialSolarPage() {
 
       {/* Table 1: Solar Capacity & Suitable Business Types (User Specified) */}
       <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.6 }} 
+          className="text-center max-w-3xl mx-auto mb-12 space-y-3"
+        >
           <span className="text-blue-600 font-bold uppercase tracking-widest text-xs">System Sizing Matrix</span>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900">Solar Capacity & Suitable Business Types</h2>
           <p className="text-slate-600 text-sm sm:text-base">
             Find the ideal solar plant capacity engineered specifically for your business facility and power consumption pattern.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="overflow-x-auto rounded-3xl shadow-xl shadow-slate-100 border border-slate-200 bg-white">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.8 }} 
+          className="overflow-x-auto rounded-3xl shadow-xl shadow-slate-100 border border-slate-200 bg-white"
+        >
           <table className="w-full text-left border-collapse text-xs sm:text-sm">
             <thead>
               <tr className="bg-slate-900 text-white uppercase text-[11px] tracking-wider">
@@ -238,21 +306,33 @@ export default function CommercialSolarPage() {
               ))}
             </tbody>
           </table>
-        </div>
+        </motion.div>
       </section>
 
       {/* Table 2: Commercial Capacity & Estimated Monthly Generation (User Specified) */}
       <section className="py-16 bg-slate-900 text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.6 }} 
+            className="text-center max-w-3xl mx-auto mb-12 space-y-3"
+          >
             <span className="text-amber-400 font-bold uppercase tracking-widest text-xs">Power Generation Estimates</span>
             <h2 className="text-3xl sm:text-4xl font-black">Estimated Monthly Solar Generation & Savings</h2>
             <p className="text-slate-400 text-sm sm:text-base">
               Average solar power generation and approximate utility bill offset under high solar irradiance conditions across India.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="overflow-x-auto rounded-3xl shadow-2xl border border-slate-700 bg-slate-800/90">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.8 }} 
+            className="overflow-x-auto rounded-3xl shadow-2xl border border-slate-700 bg-slate-800/90"
+          >
             <table className="w-full text-left border-collapse text-xs sm:text-sm">
               <thead>
                 <tr className="bg-slate-950 text-white uppercase text-[11px] tracking-wider border-b border-slate-700">
@@ -273,7 +353,7 @@ export default function CommercialSolarPage() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </motion.div>
 
           <p className="text-center text-xs text-slate-400 mt-4">
             * Actual monthly generation depends on shadow-free orientation, panel angle, and seasonal solar irradiance.
@@ -283,73 +363,180 @@ export default function CommercialSolarPage() {
 
       {/* Sectors We Serve Grid */}
       <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.6 }} 
+          className="text-center max-w-3xl mx-auto mb-16 space-y-3"
+        >
           <span className="text-blue-600 font-bold uppercase tracking-widest text-xs">Sector Expertise</span>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900">Commercial Solar Tailored to Your Industry</h2>
           <p className="text-slate-600 text-sm sm:text-base">
             We analyze your 12-month load curves and facility layout to engineer the most cost-effective solar generation architecture.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {sectors.map((sec, idx) => {
             const Icon = sec.icon;
             return (
-              <div 
+              <motion.div 
                 key={sec.title}
-                className="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl shadow-slate-100 flex flex-col justify-between hover:border-blue-400 transition-all"
+                initial={{ opacity: 0, y: 30 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }} 
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                whileHover={{ y: -6 }}
+                className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-xl shadow-slate-100 flex flex-col justify-between hover:border-blue-400 transition-all group"
               >
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
-                    <Icon className="w-7 h-7" />
+                  <div className="relative h-52 sm:h-60 overflow-hidden bg-slate-900">
+                    <img 
+                      src={sec.image} 
+                      alt={sec.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-amber-400">
+                      {sec.badge}
+                    </div>
+                    <div className="absolute bottom-4 right-4 bg-blue-600/90 backdrop-blur-md px-3 py-1 rounded-xl text-xs font-bold text-white">
+                      {sec.capacity}
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3">{sec.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">{sec.desc}</p>
-                  
-                  <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-8 border-t border-slate-100 pt-6">
-                    {sec.benefits.map((b, bidx) => (
-                      <li key={bidx} className="flex items-center gap-2.5">
-                        <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
+
+                  <div className="p-8">
+                    <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">{sec.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6">{sec.desc}</p>
+                    
+                    <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-8 border-t border-slate-100 pt-6">
+                      {sec.benefits.map((b, bidx) => (
+                        <li key={bidx} className="flex items-center gap-2.5">
+                          <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
-                <a 
-                  href="#commercial-quote" 
-                  className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:text-blue-500"
-                >
-                  Request Feasibility Audit <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
+                <div className="px-8 pb-8">
+                  <a 
+                    href="#commercial-quote" 
+                    className="w-full block text-center py-3.5 px-4 rounded-xl font-bold text-sm bg-slate-900 hover:bg-blue-600 text-white transition-colors"
+                  >
+                    Request Feasibility Audit <ArrowRight className="w-4 h-4 inline ml-1" />
+                  </a>
+                </div>
+              </motion.div>
             );
           })}
+        </div>
+      </section>
+
+      {/* Completed Commercial Projects Showcase */}
+      <section className="py-20 bg-slate-100/70 border-y border-slate-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.6 }} 
+            className="text-center max-w-3xl mx-auto mb-16 space-y-3"
+          >
+            <span className="text-blue-600 font-bold uppercase tracking-widest text-xs">Real Field Installations</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900">Featured Commercial & Industrial Projects</h2>
+            <p className="text-slate-600 text-sm sm:text-base">
+              Explore completed commercial rooftop solar arrays and industrial shed plants engineered by AMR Solar across India.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {commercialProjects.map((p, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -6 }}
+                className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-xl shadow-slate-100 flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="relative h-48 overflow-hidden bg-slate-900">
+                    <img 
+                      src={p.image} 
+                      alt={p.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-bold text-amber-400">
+                      {p.capacity}
+                    </div>
+                  </div>
+                  <div className="p-5 space-y-3">
+                    <h4 className="font-bold text-slate-900 text-base leading-snug">{p.title}</h4>
+                    <div className="text-xs text-blue-600 font-bold flex items-center gap-1">
+                      <span>{p.location}</span>
+                    </div>
+                    <div className="p-2.5 bg-emerald-50 rounded-xl border border-emerald-100 text-xs font-black text-emerald-700">
+                      {p.savings}
+                    </div>
+                    <p className="text-slate-600 text-xs leading-relaxed">{p.desc}</p>
+                  </div>
+                </div>
+                <div className="p-5 pt-0">
+                  <a 
+                    href="#commercial-quote"
+                    className="block text-center py-2.5 rounded-xl bg-slate-900 hover:bg-blue-600 text-white font-bold text-xs transition-colors"
+                  >
+                    Get Similar Sizing
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Financial ROI and Depreciation Section */}
       <section className="bg-slate-900 text-white py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.6 }} 
+            className="text-center max-w-3xl mx-auto mb-16 space-y-4"
+          >
             <span className="text-amber-400 font-bold uppercase tracking-widest text-xs">Balance Sheet Benefits</span>
             <h2 className="text-3xl sm:text-4xl font-black">Why Solar is Your Strongest Financial Asset</h2>
             <p className="text-slate-400 text-sm sm:text-base">
               Accelerated depreciation combined with fixed levelized energy costs guarantees dramatic improvements to your company's EBITDA.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {financialBenefits.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="bg-slate-800/80 border border-slate-700 p-6 rounded-3xl space-y-4">
+                <motion.div 
+                  key={idx} 
+                  initial={{ opacity: 0, y: 30 }} 
+                  whileInView={{ opacity: 1, y: 0 }} 
+                  viewport={{ once: true }} 
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  whileHover={{ y: -4 }}
+                  className="bg-slate-800/80 border border-slate-700 p-6 rounded-3xl space-y-4"
+                >
                   <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center">
                     <Icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-white">{item.title}</h3>
                   <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -360,7 +547,13 @@ export default function CommercialSolarPage() {
       <section id="commercial-quote" className="py-20 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          <div className="lg:col-span-5 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -40 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.8 }} 
+            className="lg:col-span-5 space-y-6"
+          >
             <span className="text-blue-600 font-bold uppercase tracking-widest text-xs">Direct Commercial Consultation</span>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 leading-tight">
               Get Your Custom Commercial Solar Proposal
@@ -392,16 +585,22 @@ export default function CommercialSolarPage() {
               <strong className="text-amber-400 block font-bold text-sm">Service Areas:</strong>
               <p className="text-slate-300">Secunderabad, Hyderabad, Medchal, Jagtial, Karimnagar, Warangal, and industrial corridors across India.</p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Dynamic Quote Form */}
-          <div className="lg:col-span-7">
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.8 }} 
+            className="lg:col-span-7"
+          >
             <DynamicQuoteForm 
               defaultCategory="Commercial Solar"
               title="Commercial Solar Enquiry & Sizing"
               subtitle="Choose your estimated capacity from the dropdown below."
             />
-          </div>
+          </motion.div>
 
         </div>
       </section>

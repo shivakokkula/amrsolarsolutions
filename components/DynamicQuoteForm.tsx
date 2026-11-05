@@ -123,7 +123,7 @@ export default function DynamicQuoteForm({
 
     if (message) text += `*Note:* ${message}\n`;
 
-    return `https://wa.me/917569967711?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/919347857711?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -600,7 +600,7 @@ export default function DynamicQuoteForm({
             className="w-full py-3 rounded-xl border border-emerald-500/30 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold transition-colors flex items-center justify-center gap-2 text-xs sm:text-sm"
           >
             <MessageSquare className="w-4 h-4 text-emerald-600" />
-            Or Send Instantly via WhatsApp (+91 7569967711)
+            Or Send Instantly via WhatsApp (+91 9347857711)
           </a>
         </div>
 

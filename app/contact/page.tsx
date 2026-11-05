@@ -57,7 +57,14 @@ export default function ContactUsPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           {/* Direct Phone Call */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 hover:-translate-y-1 transition-all">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            whileHover={{ y: -6 }}
+            className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 transition-all"
+          >
             <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4">
               <Phone className="w-6 h-6" />
             </div>
@@ -77,10 +84,17 @@ export default function ContactUsPage() {
                 Call: +91 9347857711
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* WhatsApp Chat */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 hover:-translate-y-1 transition-all">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            whileHover={{ y: -6 }}
+            className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 transition-all"
+          >
             <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
               <MessageSquare className="w-6 h-6" />
             </div>
@@ -88,26 +102,33 @@ export default function ContactUsPage() {
             <p className="text-xs text-slate-500 mb-4">Send your roof photos or electricity bill</p>
             <div className="space-y-2">
               <a 
-                href="https://wa.me/917569967711?text=Hello%20AMR%20Solar%2C%20I%20am%20interested%20in%20solar%20solutions." 
+                href="https://wa.me/919347857711?text=Hello%20AMR%20Solar%2C%20I%20am%20interested%20in%20solar%20solutions." 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center py-2.5 px-4 rounded-xl font-bold text-sm bg-[#25D366] hover:bg-[#20ba59] text-white transition-colors"
               >
-                WhatsApp +91 7569967711
+                WhatsApp +91 9347857711
               </a>
               <a 
-                href="https://wa.me/919347857711?text=Hello%20AMR%20Solar%2C%20I%20would%20like%20a%20solar%20quote." 
+                href="https://wa.me/917569967711?text=Hello%20AMR%20Solar%2C%20I%20would%20like%20a%20solar%20quote." 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center py-2.5 px-4 rounded-xl font-bold text-sm bg-slate-100 hover:bg-slate-200 text-slate-900 transition-colors"
               >
-                WhatsApp +91 9347857711
+                WhatsApp +91 7569967711
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Official Email */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 hover:-translate-y-1 transition-all">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            whileHover={{ y: -6 }}
+            className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 transition-all"
+          >
             <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
               <Mail className="w-6 h-6" />
             </div>
@@ -124,7 +145,7 @@ export default function ContactUsPage() {
                 Fast response within 2 hours
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </section>
@@ -134,7 +155,13 @@ export default function ContactUsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Office Locations */}
-          <div className="lg:col-span-5 space-y-8">
+          <motion.div 
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-5 space-y-8"
+          >
             <div>
               <span className="text-amber-600 font-bold uppercase tracking-widest text-xs">Our Physical Presence</span>
               <h2 className="text-3xl font-black text-slate-900 mt-1">Visit Our Offices</h2>
@@ -213,23 +240,35 @@ export default function ContactUsPage() {
               <p className="text-slate-300">Monday - Saturday: 9:00 AM - 7:00 PM</p>
               <p className="text-slate-300">Sunday: 10:00 AM - 3:00 PM (Emergency & WhatsApp Consultation)</p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Dynamic Quote Form */}
-          <div className="lg:col-span-7">
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-7"
+          >
             <DynamicQuoteForm 
               defaultCategory="Residential Solar"
               title="Send Us an Enquiry"
               subtitle="Select your category below and our team will get back to you with accurate pricing and subsidy details."
             />
-          </div>
+          </motion.div>
 
         </div>
       </section>
 
       {/* Trust & Experience Stats */}
       <section className="bg-amber-500 text-slate-950 py-12">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+        >
           <div>
             <div className="text-3xl sm:text-4xl font-black">100+</div>
             <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900/80 mt-1">Projects Completed</div>
@@ -246,7 +285,7 @@ export default function ContactUsPage() {
             <div className="text-3xl sm:text-4xl font-black">100%</div>
             <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900/80 mt-1">Subsidy Assistance</div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
     </div>

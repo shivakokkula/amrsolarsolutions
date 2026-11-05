@@ -21,7 +21,7 @@ export default function ProjectsPage() {
       capacity: "5 kW On-Grid",
       savings: "85% Bill Reduction",
       generation: "600+ Units / Month",
-      image: "/assets/images/residential/residential_1.jpeg",
+      image: "/assets/images/residential/residential_2.jpeg",
       description: "Custom rooftop solar installation utilizing high-efficiency Mono PERC modules with bi-directional net metering under PM Surya Ghar Yojana. The client received ₹78,000 direct subsidy.",
       metrics: ["Subsidy: ₹78,000 Received", "Payback: 3.2 Years", "DISCOM Approved"],
     },
@@ -33,12 +33,36 @@ export default function ProjectsPage() {
       capacity: "10 kW Hybrid with Battery",
       savings: "90% Bill Reduction",
       generation: "1,200+ Units / Month",
-      image: "/assets/images/commercial/commercial_4.jpeg",
+      image: "/assets/images/residential/residential_4.jpeg",
       description: "Turnkey hybrid rooftop system with Lithium-ion battery storage, ensuring zero downtime during grid power outages while feeding excess generation back to grid.",
       metrics: ["Battery Backup: 10 kWh", "Full Home HVAC Powered", "Net Metered"],
     },
     {
       id: 3,
+      title: "3 kW PM Surya Ghar Rooftop Solar",
+      category: "Residential",
+      location: "Hyderabad, India",
+      capacity: "3 kW Domestic Solar",
+      savings: "Zero Electric Bill",
+      generation: "360+ Units / Month",
+      image: "/assets/images/residential/residential_3.jpeg",
+      description: "Complete turnkey domestic rooftop installation eligible for ₹78,000 maximum Central DBT subsidy with elevated structure and bi-directional meter.",
+      metrics: ["100% Paperwork Managed", "Elevated Terrace Structure", "DBT Subsidy Credited"],
+    },
+    {
+      id: 4,
+      title: "6 kW Rooftop Solar Canopy & Shade Pergola",
+      category: "Residential",
+      location: "Secunderabad, India",
+      capacity: "6 kW Solar Canopy",
+      savings: "88% Bill Reduction",
+      generation: "720+ Units / Month",
+      image: "/assets/images/residential/residential_5.jpeg",
+      description: "Elevated rooftop solar canopy structure providing clean solar power while transforming the terrace into a shaded usable outdoor living space.",
+      metrics: ["Elevated Canopy Design", "₹78,000 Subsidy Approved", "Usable Terrace Living"],
+    },
+    {
+      id: 5,
       title: "25 kW Commercial Complex Installation",
       category: "Commercial",
       location: "Hyderabad",
@@ -50,7 +74,7 @@ export default function ProjectsPage() {
       metrics: ["40% Tax Depreciation", "3 Year Payback Period", "Real-time Remote Monitoring"],
     },
     {
-      id: 4,
+      id: 6,
       title: "50 kW Industrial Factory Solar Plant",
       category: "Commercial",
       location: "Secunderabad Industrial Belt",
@@ -62,7 +86,7 @@ export default function ProjectsPage() {
       metrics: ["Replaces DG Fuel", "Custom Shed Clamping", "High Surge Motor Protection"],
     },
     {
-      id: 5,
+      id: 7,
       title: "100 kW Commercial Warehouse Solar Setup",
       category: "Commercial",
       location: "Secunderabad",
@@ -74,7 +98,19 @@ export default function ProjectsPage() {
       metrics: ["40% IT Depreciation", "Remote App Monitoring", "Net Metered"],
     },
     {
-      id: 6,
+      id: 8,
+      title: "40 kW Commercial Showroom & Office",
+      category: "Commercial",
+      location: "Karimnagar / Jagtial",
+      capacity: "40 kW Commercial Rooftop",
+      savings: "₹50,000 Saved Monthly",
+      generation: "5,000 Units / Month",
+      image: "/assets/images/commercial/commercial_4.jpeg",
+      description: "Commercial building rooftop setup offsetting heavy daytime HVAC and showroom lighting tariffs with continuous online monitoring.",
+      metrics: ["40% Accelerated Depreciation", "Payback in 3.4 Years", "Net Metering Enabled"],
+    },
+    {
+      id: 9,
       title: "7.5 HP Solar Agricultural Borewell Pump",
       category: "Agricultural",
       location: "Jagtial District",
@@ -86,7 +122,7 @@ export default function ProjectsPage() {
       metrics: ["Borewell Depth: 280 ft", "10 Acres Irrigated", "Dry Run Auto-Protection"],
     },
     {
-      id: 7,
+      id: 10,
       title: "5 HP Solar VFD Tubewell Conversion",
       category: "Agricultural",
       location: "Peddapalli",
@@ -98,7 +134,7 @@ export default function ProjectsPage() {
       metrics: ["Dual Solar/Grid Mode", "Eliminates Voltage Drops", "5-Year Full Warranty"],
     },
     {
-      id: 8,
+      id: 11,
       title: "10 HP Agricultural Solar Borewell System",
       category: "Agricultural",
       location: "Velgatoor, Jagtial",
@@ -110,7 +146,7 @@ export default function ProjectsPage() {
       metrics: ["High-Pressure Lift", "Sand-Resistant Pump", "5-Year Full Warranty"],
     },
     {
-      id: 9,
+      id: 12,
       title: "Solar Water Pumping & Drip Integration",
       category: "Agricultural",
       location: "Karimnagar",
@@ -122,7 +158,7 @@ export default function ProjectsPage() {
       metrics: ["Drip Irrigation Ready", "Automatic Daytime Start", "Zero Maintenance"],
     },
     {
-      id: 10,
+      id: 13,
       title: "Farm Micro-Irrigation Solar Setup",
       category: "Agricultural",
       location: "Nizamabad",
@@ -184,7 +220,13 @@ export default function ProjectsPage() {
 
       {/* Stats Ribbon */}
       <section className="bg-amber-500 text-slate-950 py-8">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center font-bold">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center font-bold"
+        >
           <div>
             <div className="text-3xl sm:text-4xl font-black">100+</div>
             <div className="text-xs uppercase tracking-wider text-slate-900/80">Projects Completed</div>
@@ -201,12 +243,18 @@ export default function ProjectsPage() {
             <div className="text-3xl sm:text-4xl font-black">25 Years</div>
             <div className="text-xs uppercase tracking-wider text-slate-900/80">Panel Performance</div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Category Filter Pills */}
       <section className="py-12 max-w-7xl mx-auto px-6">
-        <div className="flex flex-wrap justify-center gap-3">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-wrap justify-center gap-3"
+        >
           {(["All", "Residential", "Commercial", "Agricultural"] as const).map((cat) => (
             <button
               key={cat}
@@ -220,7 +268,7 @@ export default function ProjectsPage() {
               {cat === "All" ? "All Projects" : `${cat} Solar`}
             </button>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* Projects Showcase Cards */}
@@ -234,8 +282,9 @@ export default function ProjectsPage() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-xl shadow-slate-100 flex flex-col justify-between hover:-translate-y-1.5 transition-all group"
+                transition={{ duration: 0.35 }}
+                whileHover={{ y: -6 }}
+                className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-xl shadow-slate-100 flex flex-col justify-between transition-all group"
               >
                 <div>
                   <div className="relative h-56 w-full overflow-hidden bg-slate-100">
@@ -294,7 +343,13 @@ export default function ProjectsPage() {
 
       {/* Ready to Start CTA */}
       <section className="mt-20 max-w-7xl mx-auto px-6">
-        <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8"
+        >
           <div className="space-y-2">
             <span className="text-amber-400 font-bold uppercase tracking-widest text-xs">Ready to Save</span>
             <h3 className="text-2xl sm:text-3xl font-black">Want Your Property Powered by AMR Solar?</h3>
@@ -316,7 +371,7 @@ export default function ProjectsPage() {
               Call +91 7569967711
             </a>
           </div>
-        </div>
+        </motion.div>
       </section>
 
     </div>

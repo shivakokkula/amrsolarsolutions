@@ -157,7 +157,7 @@ export default function SubsidiesFinancePage() {
       <section className="relative bg-slate-900 text-white py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-35">
           <img 
-            src="/assets/images/commercial/commercial_1.jpeg" 
+            src="/assets/images/residential/residential_2.jpeg" 
             alt="PM Surya Ghar Muft Bijli Yojana Subsidies & Financing" 
             className="w-full h-full object-cover"
           />
@@ -214,10 +214,15 @@ export default function SubsidiesFinancePage() {
             </motion.div>
           </div>
 
-          <div className="lg:col-span-5 space-y-4">
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.7 }}
+            className="lg:col-span-5 space-y-4"
+          >
             <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl group">
               <img 
-                src="/assets/images/commercial/commercial_2.jpeg" 
+                src="/assets/images/residential/residential_3.jpeg" 
                 alt="AMR Solar Rooftop Subsidy Installation" 
                 className="w-full h-44 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-700" 
               />
@@ -250,21 +255,33 @@ export default function SubsidiesFinancePage() {
                 * Direct bank transfer (DBT) directly from Central Government to your Aadhaar-linked account.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Subsidy Slabs Breakdown Table */}
       <section id="pm-surya-ghar" className="py-20 max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-14 space-y-3"
+        >
           <span className="text-amber-600 font-bold uppercase tracking-widest text-xs">Official Slabs</span>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900">PM Surya Ghar Subsidy Breakdown</h2>
           <p className="text-slate-600 text-sm sm:text-base">
             See exactly how much grant you receive and what your effective net investment will be for rooftop solar.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="overflow-x-auto rounded-3xl shadow-xl shadow-slate-100 border border-slate-200 bg-white">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="overflow-x-auto rounded-3xl shadow-xl shadow-slate-100 border border-slate-200 bg-white"
+        >
           <table className="w-full text-left border-collapse text-xs sm:text-sm">
             <thead>
               <tr className="bg-slate-900 text-white uppercase text-[11px] tracking-wider">
@@ -293,24 +310,35 @@ export default function SubsidiesFinancePage() {
               ))}
             </tbody>
           </table>
-        </div>
+        </motion.div>
       </section>
 
       {/* Eligibility Criteria Checklist (User requested: eligibility) */}
       <section className="bg-slate-900 text-white py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-3xl mx-auto mb-16 space-y-3"
+          >
             <span className="text-amber-400 font-bold uppercase tracking-widest text-xs">Eligibility Verification</span>
             <h2 className="text-3xl sm:text-4xl font-black">Who is Eligible for the Solar Subsidy?</h2>
             <p className="text-slate-300 text-sm sm:text-base">
               Check if your property qualifies for the ₹78,000 PM Surya Ghar grant.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {eligibilityChecklist.map((item, idx) => (
-              <div 
+              <motion.div 
                 key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -6 }}
                 className="bg-slate-800/80 border border-slate-700 p-6 rounded-3xl space-y-3 hover:border-amber-400 transition-colors"
               >
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center font-bold">
@@ -318,10 +346,17 @@ export default function SubsidiesFinancePage() {
                 </div>
                 <h3 className="text-lg font-bold text-white">{item.title}</h3>
                 <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
-              </div>
+              </motion.div>
             ))}
 
-            <div className="bg-amber-500 text-slate-950 p-6 rounded-3xl flex flex-col justify-between">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: eligibilityChecklist.length * 0.1 }}
+              whileHover={{ y: -6 }}
+              className="bg-amber-500 text-slate-950 p-6 rounded-3xl flex flex-col justify-between"
+            >
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-900/80">Check Your Eligibility</span>
                 <h3 className="text-xl font-black mt-2">Unsure if your roof qualifies?</h3>
@@ -330,32 +365,43 @@ export default function SubsidiesFinancePage() {
                 </p>
               </div>
               <a 
-                href="https://wa.me/917569967711?text=Hello%20AMR%20Solar%2C%20please%20check%20my%20subsidy%20eligibility." 
+                href="https://wa.me/919347857711?text=Hello%20AMR%20Solar%2C%20please%20check%20my%20subsidy%20eligibility." 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="mt-6 block text-center py-3 bg-slate-950 text-white font-bold rounded-xl text-xs hover:bg-slate-900 transition-all"
               >
-                Verify on WhatsApp: 7569967711
+                Verify on WhatsApp: 9347857711
               </a>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Solar Financing & Bank Loans Section (User requested: financing) */}
       <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-3"
+        >
           <span className="text-amber-600 font-bold uppercase tracking-widest text-xs">Affordable Solar Loans</span>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900">Low-Interest Solar Financing Options</h2>
           <p className="text-slate-600 text-sm sm:text-base">
             Nationalized banks now offer collateral-free rooftop solar loans with interest rates as low as ~7% p.a., making solar affordable for every household.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {bankPartners.map((bank, idx) => (
-            <div 
+            <motion.div 
               key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              whileHover={{ y: -6 }}
               className="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl shadow-slate-100 space-y-5"
             >
               <div className="flex items-center justify-between">
@@ -398,7 +444,7 @@ export default function SubsidiesFinancePage() {
                   Apply for Loan <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -407,7 +453,13 @@ export default function SubsidiesFinancePage() {
       <section id="subsidy-enquiry" className="py-20 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <div className="lg:col-span-6 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-6 space-y-6"
+          >
             <span className="text-amber-400 font-bold uppercase tracking-widest text-xs">Full Documentation Support</span>
             <h2 className="text-3xl sm:text-4xl font-black leading-tight">
               Let AMR Solar Manage Your Subsidy from Start to Finish
@@ -442,9 +494,15 @@ export default function SubsidiesFinancePage() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="lg:col-span-6 bg-white text-slate-900 rounded-3xl p-8 shadow-2xl">
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-6 bg-white text-slate-900 rounded-3xl p-8 shadow-2xl"
+          >
             <h3 className="text-2xl font-black mb-2 text-slate-900">Request Subsidy & Loan Support</h3>
             <p className="text-xs text-slate-500 mb-6">Enter your details to initiate your government subsidy claim.</p>
 
@@ -525,21 +583,34 @@ export default function SubsidiesFinancePage() {
               {error && <p className="text-red-500 text-xs text-center">{error}</p>}
               {success && <p className="text-emerald-600 text-xs text-center font-bold">Inquiry received! Our team will contact you shortly.</p>}
             </form>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12 space-y-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12 space-y-3"
+          >
             <span className="text-amber-600 font-bold uppercase tracking-widest text-xs">Subsidy & Finance FAQs</span>
             <h2 className="text-3xl font-black text-slate-900">Common Questions on Solar Subsidies & Loans</h2>
-          </div>
+          </motion.div>
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="border border-slate-200 rounded-2xl overflow-hidden">
+              <motion.div 
+                key={idx} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                className="border border-slate-200 rounded-2xl overflow-hidden"
+              >
                 <button 
                   onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
                   className="w-full flex items-center justify-between p-5 bg-slate-50 hover:bg-slate-100 transition-colors text-left"
@@ -552,7 +623,7 @@ export default function SubsidiesFinancePage() {
                     {faq.a}
                   </div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
