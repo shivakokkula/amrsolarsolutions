@@ -79,7 +79,7 @@ export default function AMRSolarHome() {
             </motion.div>
             
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
-              Best Rooftop, Commercial & Agricultural Solar with <span className="text-amber-400">₹78,000 Subsidy</span>
+              Best Solar Solutions & Solar Installations Company with <span className="text-amber-400">₹78,000 Subsidy</span>
             </h1>
             
             <motion.p 
@@ -89,7 +89,7 @@ export default function AMRSolarHome() {
               transition={{ duration: 0.8, delay: 0.2 }} 
               className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed"
             >
-              Power your home, shop, office, or farm with clean solar energy. AMR Solar delivers premium MNRE-approved installations, 100% net metering support, and direct government subsidies under PM Surya Ghar Muft Bijli Yojana. Save up to 90% on electricity bills today.
+              Power your home, shop, office, or farm with clean solar energy. AMR Solar Solutions is India's leading solar installation company delivering premium MNRE-approved rooftop solar solutions, commercial power plants, and agricultural pumps with 100% net metering support and direct government subsidies under PM Surya Ghar Muft Bijli Yojana. Save up to 90% on electricity bills today.
             </motion.p>
             
             <motion.div 
