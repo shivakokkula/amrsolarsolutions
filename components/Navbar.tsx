@@ -23,42 +23,21 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top Announcement & Quick Contact Bar */}
-      <div className="bg-slate-900 text-slate-300 text-xs py-2 px-4 sm:px-8 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-            <span className="flex items-center gap-2 font-medium">
-              <Phone className="w-3.5 h-3.5 text-amber-400" />
-              <a href="tel:+917569967711" className="hover:text-amber-400 transition-colors">+91 7569967711</a>
-              <span className="text-slate-600">/</span>
-              <a href="tel:+919347857711" className="hover:text-amber-400 transition-colors">+91 9347857711</a>
-            </span>
-            <span className="flex items-center gap-2">
-              <Mail className="w-3.5 h-3.5 text-amber-400" />
-              <a href="mailto:info@amrsolarsolutions.com" className="hover:text-amber-400 transition-colors">info@amrsolarsolutions.com</a>
-            </span>
-          </div>
-          <div className="text-amber-400 font-semibold flex items-center gap-1.5 text-center">
-            <span>☀️ PM Surya Ghar Muft Bijli Yojana: Direct Govt Subsidy up to ₹78,000!</span>
-          </div>
-        </div>
-      </div>
-
       {/* Main Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+      <header className="sticky top-0 z-50 border-b border-slate-100 bg-white shadow-sm">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-8">
           
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0 cursor-pointer group">
             <img 
               src="/assets/amr_logo.jpeg" 
               alt="AMR Solar Solutions" 
-              className="h-12 sm:h-14 w-auto object-contain rounded-xl shadow-sm border border-slate-100 group-hover:scale-105 transition-transform" 
+              className="h-12 w-auto rounded-xl border border-slate-100 object-contain shadow-sm transition-transform group-hover:scale-105 sm:h-14"
             />
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-2 xl:gap-3 font-semibold text-slate-700 text-sm">
+          <nav className="ml-auto hidden items-center gap-1 font-semibold text-slate-700 text-sm lg:flex xl:gap-2">
             <Link 
               href="/" 
               className={`px-3.5 py-2 rounded-xl transition-colors whitespace-nowrap ${
@@ -186,10 +165,10 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop Right CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden items-center gap-3 lg:flex">
             <Link 
               href="/contact" 
-              className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full shadow-md shadow-amber-500/20 transition-all flex items-center gap-2 group whitespace-nowrap"
+              className="flex items-center gap-2 whitespace-nowrap rounded-full bg-amber-500 px-5 py-2.5 text-xs font-bold text-slate-950 shadow-md shadow-amber-500/20 transition-all hover:bg-amber-400 sm:text-sm group"
             >
               Get quote
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -200,7 +179,7 @@ export default function Navbar() {
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
             aria-label="Toggle Navigation Menu"
-            className="lg:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none"
+            className="rounded-xl p-2 text-slate-700 hover:bg-slate-100 focus:outline-none lg:hidden"
           >
             {mobileMenuOpen ? <X className="w-7 h-7 text-slate-900" /> : <Menu className="w-7 h-7 text-slate-900" />}
           </button>
@@ -213,7 +192,7 @@ export default function Navbar() {
               initial={{ opacity: 0, height: 0 }} 
               animate={{ opacity: 1, height: "auto" }} 
               exit={{ opacity: 0, height: 0 }} 
-              className="lg:hidden border-b border-slate-200 bg-white overflow-hidden shadow-2xl"
+              className="overflow-hidden border-b border-slate-200 bg-white shadow-2xl lg:hidden"
             >
               <div className="px-6 py-5 space-y-2 max-h-[80vh] overflow-y-auto">
                 <div className="pb-3 border-b border-slate-100 flex items-center justify-between">
@@ -352,6 +331,9 @@ export default function Navbar() {
                       </a>
                       <a href="tel:+919347857711" className="flex items-center gap-2 hover:text-amber-600">
                         <Phone className="w-3.5 h-3.5 text-amber-500" /> +91 9347857711
+                      </a>
+                      <a href="mailto:info@amrsolarsolutions.com" className="flex items-center gap-2 hover:text-amber-600">
+                        <Mail className="w-3.5 h-3.5 text-amber-500" /> info@amrsolarsolutions.com
                       </a>
                     </div>
                   </div>
